@@ -1,0 +1,112 @@
+/** Copyright ©2025 Devexperts LLC.
+All rights reserved. Any unauthorized use will constitute an infringement of copyright.
+In case of any questions regarding types of use, please contact legal@devexperts.com.
+This notice must remain intact.
+**/
+import { TRawStudySettings } from '../chart/model/studies.model';
+import { StudiesDictionary } from './localization/studies';
+export type StudiesList = TRawStudySettings[];
+export declare const DEFAULT_STUDIES_IDS: {
+    readonly TDSequential: "TDSequential";
+    readonly WaveTrend: "WaveTrend";
+    readonly KAMA: "KAMA";
+    readonly ChandeMomentumOscillator: "ChandeMomentumOscillator";
+    readonly AverageTrueRange: "AverageTrueRange";
+    readonly LinearRegressionChannel: "LinearRegressionChannel";
+    readonly WildersSmoothing: "WildersSmoothing";
+    readonly AccumulationDistribution: "AccumulationDistribution";
+    readonly WilliamsFractal: "WilliamsFractal";
+    readonly WilliamsAD: "WilliamsAD";
+    readonly FullStochastic: "FullStochastic";
+    readonly HLVolatility: "HLVolatility";
+    readonly Elder: "Elder";
+    readonly PriceVolumeTrend: "PriceVolumeTrend";
+    readonly ADX: "ADX";
+    readonly RelativeVigorIndexSMA: "RelativeVigorIndexSMA";
+    readonly PriceChannel: "PriceChannel";
+    readonly RelativeVigorIndex: "RelativeVigorIndex";
+    readonly EMA: "EMA";
+    readonly VWAP: "VWAP";
+    readonly MoneyFlowIndex: "MoneyFlowIndex";
+    readonly MarketFacilitationIndex: "MarketFacilitationIndex";
+    readonly LinearRegression: "LinearRegression";
+    readonly OnBalanceVolume: "OnBalanceVolume";
+    readonly ParabolicSAR: "ParabolicSAR";
+    readonly DynamicMomentumIndex: "DynamicMomentumIndex";
+    readonly CenterOfGravityOscillator: "CenterOfGravityOscillator";
+    readonly PercentChange: "PercentChange";
+    readonly ForecastOscillator: "ForecastOscillator";
+    readonly WilliamsAlligator: "WilliamsAlligator";
+    readonly UltimateOscillator: "UltimateOscillator";
+    readonly SMA: "SMA";
+    readonly ROC: "ROC";
+    readonly WeightedClose: "WeightedClose";
+    readonly WMA: "WMA";
+    readonly DeMarker: "DeMarker";
+    readonly DayOpenClose: "DayOpenClose";
+    readonly StandardErrorBands: "StandardErrorBands";
+    readonly TripleEMA: "TripleEMA";
+    readonly PercentagePriceOscillator: "PercentagePriceOscillator";
+    readonly TypicalPrice: "TypicalPrice";
+    readonly Inertia: "Inertia";
+    readonly RelativeStrengthIndex: "RelativeStrengthIndex";
+    readonly SchaffTrendCycle: "SchaffTrendCycle";
+    readonly StandardDeviationChannel: "StandardDeviationChannel";
+    readonly FastStochastic: "FastStochastic";
+    readonly EnvelopeWMA: "EnvelopeWMA";
+    readonly NegativeVolumeIndex: "NegativeVolumeIndex";
+    readonly TimeSeriesForecast: "TimeSeriesForecast";
+    readonly KRI: "KRI";
+    readonly ADXR: "ADXR";
+    readonly PercentOfResistance: "PercentOfResistance";
+    readonly BollingerBands: "BollingerBands";
+    readonly ZigZag: "ZigZag";
+    readonly SMMA: "SMMA";
+    readonly DEMA: "DEMA";
+    readonly TrueStrengthIndex: "TrueStrengthIndex";
+    readonly SwingAccumulation: "SwingAccumulation";
+    readonly PivotPoints: "PivotPoints";
+    readonly KeltnerChannels: "KeltnerChannels";
+    readonly ChaikinOscillator: "ChaikinOscillator";
+    readonly EnvelopeSMA: "EnvelopeSMA";
+    readonly EnvelopeEMA: "EnvelopeEMA";
+    readonly IntradayMomentumIndex: "IntradayMomentumIndex";
+    readonly Aroon: "Aroon";
+    readonly SROC: "SROC";
+    readonly MACD: "MACD";
+    readonly MedianPrice: "MedianPrice";
+    readonly MassIndex: "MassIndex";
+    readonly RankCorrelationIndex: "RankCorrelationIndex";
+    readonly StandardDeviation: "StandardDeviation";
+    readonly AccelerationDeceleration: "AccelerationDeceleration";
+    readonly DMI: "DMI";
+    readonly TEMA: "TEMA";
+    readonly WilliamsPercentRange: "WilliamsPercentRange";
+    readonly VerticalHorizontalFilter: "VerticalHorizontalFilter";
+    readonly AwesomeOscillator: "AwesomeOscillator";
+    readonly ForceIndex: "ForceIndex";
+    readonly CCI: "CCI";
+    readonly Momentum: "Momentum";
+    readonly TMA: "TMA";
+    readonly CommoditySelection: "CommoditySelection";
+    readonly GatorOscillator: "GatorOscillator";
+    readonly SlowStochastic: "SlowStochastic";
+    readonly DetrendedPriceOsc: "DetrendedPriceOsc";
+    readonly Ichimoku: "Ichimoku";
+    readonly AroonOscillator: "AroonOscillator";
+    readonly SwingIndex: "SwingIndex";
+    readonly RelativeVolatilityIndex: "RelativeVolatilityIndex";
+    readonly EnvelopeSMMA: "EnvelopeSMMA";
+    readonly PriceOscillator: "PriceOscillator";
+    readonly STARCBands: "STARCBands";
+    readonly LinearRegressionSlope: "LinearRegressionSlope";
+    readonly ChaikinVolatility: "ChaikinVolatility";
+    readonly StdDevVolatility: "StdDevVolatility";
+    readonly FibonacciBollingerBands: "FibonacciBollingerBands";
+    readonly WaveTrendWithCrosses: "WaveTrendWithCrosses";
+};
+/**
+ * List of all studies.
+ * @doc-tags chart-react,default-config,studies
+ */
+export declare const DEFAULT_STUDIES_LIST: (studiesDictionary?: StudiesDictionary) => StudiesList;
