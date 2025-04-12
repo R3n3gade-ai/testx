@@ -1,0 +1,6 @@
+/** Copyright ©2025 Devexperts LLC.
+All rights reserved. Any unauthorized use will constitute an infringement of copyright.
+In case of any questions regarding types of use, please contact legal@devexperts.com.
+This notice must remain intact.
+**/
+import{addDays}from'date-fns';import{format}from'date-fns-tz';export const LOCALSTORAGE_TIMEZONES_KEY='timezones';export const parseTimezones=a=>{const b=new Date(),c=a['map'](d=>{const e=parseTimezone(d),f=format(b,'xxx',{'timeZone':d});return{'timeZone':d,'name':e,'utcOffset':f};});return c;};export const saveTimeZonesToLS=(a,b)=>{const c={'timezones':a,'expireTimeStamp':addDays(new Date(Date['now']()),0x1)['getTime'](),'timezonesRaw':JSON['stringify'](b)};localStorage['setItem'](LOCALSTORAGE_TIMEZONES_KEY,JSON['stringify'](c));};const parseTimezoneFallback=a=>{let b=a['slice'](a['indexOf']('/')+0x1);return a['indexOf']('GMT')===-0x1&&(b['indexOf']('/')>-0x1&&(b=b['split']('/')[0x1])),b;},parseTimezone=a=>{const b=a['match'](/(?<city>[a-z-_]+)$/i);return(b?.['groups']&&b['groups']?.['city'])??parseTimezoneFallback(a);};
