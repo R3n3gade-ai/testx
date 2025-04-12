@@ -1,0 +1,32 @@
+{
+  "name": "@dx-private/dxchart5-react-mock-providers",
+  "version": "1.0.1",
+  "author": "devexperts",
+  "license": "UNLICENSED",
+  "main": "./dist/index.js",
+  "scripts": {
+    "watch": "tsc --watch --outDir dist",
+    "build": "yarn clean && yarn tsc",
+    "build:production": "yarn clean && yarn build && yarn add_disclaimer",
+    "build:shadow_merge": "yarn test && yarn build",
+    "add_disclaimer": "yarn ts-node --project ./tsconfig.node.json ../scripts/add-disclaimer.ts",
+    "clean": "rimraf ./dist",
+    "test": "yarn test:lint",
+    "test:lint": "eslint \"./lib/**/*.ts\" \"./lib/**/*.js\" --no-error-on-unmatched-pattern",
+    "prepublishOnly": "yarn build:production"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "eslint": "^8.41.0",
+    "rimraf": "^3.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://nexus.in.devexperts.com/repository/npm-dx-private/"
+  }
+}
