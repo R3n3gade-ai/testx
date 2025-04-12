@@ -1,0 +1,6 @@
+/** Copyright ©2025 Devexperts LLC.
+All rights reserved. Any unauthorized use will constitute an infringement of copyright.
+In case of any questions regarding types of use, please contact legal@devexperts.com.
+This notice must remain intact.
+**/
+import{firstOf,lastOf}from'@devexperts/dxcharts-lite/dist/chart/utils/array.utils';import{array}from'fp-ts';import{pipe}from'fp-ts/function';import{alignSessionsToCandles}from'../chart/model/chart-sessions.model';export const generateSessions=async(a,b)=>{const {tradingHours:c,from:from=firstOf(b['candles'])?.['timestamp'],to:to=lastOf(b['candles'])?.['timestamp'],symbol:d,filter:e}=b,f={'AFTER_MARKET':[],'NO_TRADING':[],'PRE_MARKET':[],'REGULAR':[]};return from!==undefined&&to!==undefined&&pipe(await a['generateSessions'](from,to,{'symbol':d,'tradingHours':c}),g=>alignSessionsToCandles(g,b['candles']),array['map'](g=>{if(e['includes'](g['type'])){!f[g['type']]&&(f[g['type']]=[]);const h=f[g['type']];h&&h['push'](g);}})),f;};export const generateSessionsStrict=async(a,b,c,d)=>{const {tradingHours:e,period:f,symbol:g,filter:h}=d;return pipe(await a['generateSessions'](b,c+0x1,{'tradingHours':e,'symbol':g}),i=>alignSessionsToCandles(i,d['candles']),array['filter'](i=>h['includes'](i['type'])&&c>=i['from']),array['map'](i=>{if(c<i['to']){const j=c+f<=i['to']?c+f:i['to'];return{...i,'to':j};}else return i;}));};
